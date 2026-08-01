@@ -1,12 +1,10 @@
-import type { FC } from "react";
-import styles from "./modal.module.scss";
+import type { FC, ReactNode } from "react";
+import styles from "../../styles/auth.module.scss";
 
-const modalComponent: FC = () => {
-    return (
-        <div className={styles.modal}>
+const ModalComponent: FC<{ children: ReactNode }> = ({ children }) => {
+  return <div className={styles.modal}>
+    {children}
+  </div>;
+};
 
-        </div>
-    )
-}
-
-export default modalComponent
+export default ModalComponent;

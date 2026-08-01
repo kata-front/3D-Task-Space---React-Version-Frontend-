@@ -16,3 +16,16 @@ export type MTTask = {
 export type CreateTaskRequest = {
     title: string
 }
+
+export type RegisterRequest = {
+    name: string,
+    email: string,
+    password: string
+}
+
+export type LoginRequest = {
+    email: string,
+    password: string
+}
+
+export type AuthResponse = string

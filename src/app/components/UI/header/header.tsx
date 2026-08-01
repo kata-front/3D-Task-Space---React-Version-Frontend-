@@ -2,7 +2,7 @@ import { useRef, type FC } from "react";
 import styles from "./header.module.scss";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Header: FC = () => {
   const navigate = useNavigate();
@@ -39,8 +39,8 @@ const Header: FC = () => {
         </span>
       </section>
       <section className={styles["header__auth-section"]}>
-        <span>Sign in</span>
-        <span>Sign up</span>
+        <Link to="/login">Sign in</Link>
+        <Link to="/register">Sign up</Link>
       </section>
     </header>
   );
