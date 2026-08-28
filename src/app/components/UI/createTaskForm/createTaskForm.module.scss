@@ -1,59 +1,101 @@
 .create-form {
-    margin-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 30px;
+  background: rgba(15, 15, 40, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  max-width: 500px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5), 0 0 20px rgba(90, 90, 255, 0.2);
+  transition: box-shadow 0.3s ease;
 
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  &:hover {
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(120, 120, 255, 0.4);
+  }
 
-    & > label {
-        cursor: pointer;
+  & > label {
+    color: #c0c0e0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-shadow: 0 0 8px rgba(180, 180, 255, 0.5);
+  }
+
+  & > input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(20, 20, 50, 0.9);
+    color: #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+    &::placeholder {
+      color: #6f6f9f;
+      opacity: 0.7;
     }
 
-    & > input {
-        width: 100%;
-
-        margin-top: 10px;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-
-        transition: all 0.5s ease-in-out;
-
-        &:hover {
-            background-color: #d4cbcb;
-            border-color: #999;
-
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        &:focus {
-            background-color: #d4cbcb;
-            border-color: #999;
-            outline: none;
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+    &:hover {
+      background-color: rgba(30, 30, 70, 0.9);
+      border-color: rgba(255, 255, 255, 0.4);
     }
 
-    & > button {
-        width: 100%;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-
-        transition: all 0.5s ease-in-out;
-
-        &:hover {
-            background-color: #d4cbcb;
-            border-color: #999;
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-    }   
-
-    &__error {
-        color: red;
+    &:focus {
+      background-color: rgba(25, 25, 60, 0.95);
+      border-color: #8a7bff;
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 0 15px rgba(138, 123, 255, 0.6), 0 5px 15px rgba(0, 0, 0, 0.3);
     }
+  }
+
+  & > button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #5c6bc0, #7e57c2);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(90, 90, 200, 0.4);
+
+    &:hover {
+      background: linear-gradient(135deg, #6c7bd0, #8e67d2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(110, 110, 230, 0.6);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(90, 90, 200, 0.4);
+    }
+  }
+
+  &__error {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-shadow: 0 0 6px rgba(255, 100, 100, 0.4);
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

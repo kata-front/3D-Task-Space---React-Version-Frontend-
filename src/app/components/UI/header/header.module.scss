@@ -45,29 +45,41 @@
     gap: 20px;
 
     & > * {
+      text-decoration: none;
       cursor: pointer;
       position: relative;
       transition: all 0.3s ease-in-out;
+      padding: 10px 22px;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
+      font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
     & > *::after {
-      position: absolute;
-      content: "";
-      width: 0;
-      height: 2px;
-      background-color: white;
-      left: 0;
-      bottom: -5px;
-      transition: width 0.3s ease-in-out;
+      display: none;
     }
 
     & > *:hover {
-      color: rgb(197, 197, 197);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #8a7bff;
       transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(138, 123, 255, 0.4);
     }
 
-    & > *:hover::after {
-      width: 100%;
+    & > *:nth-child(2) {
+      background: linear-gradient(135deg, #5c6bc0, #7e57c2);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 15px rgba(90, 90, 200, 0.4);
+
+      &:hover {
+        background: linear-gradient(135deg, #6c7bd0, #8e67d2);
+        box-shadow: 0 8px 25px rgba(110, 110, 230, 0.6);
+        border-color: transparent;
+      }
     }
   }
 }

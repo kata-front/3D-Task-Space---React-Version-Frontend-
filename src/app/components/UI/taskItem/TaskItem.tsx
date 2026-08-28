@@ -30,3 +30,4 @@ const TaskItem: FC<{ task: MTTask }> = memo(({ task }) => {
 });
 
 export default TaskItem;
+
